@@ -16,3 +16,28 @@ console.log(" person");
 const myfunction= function(){// return type of function is object
        console.log("hello world");// 
 }
+
+
+
+
+
+// /++++++++++++++++++++++++++++++++++++++
+
+
+// memory mangament in js 
+// Stack memory it only stores the primitive data types means pass by value 
+let a=10;
+let b=a;
+b=30;
+console.log(a);// outuput will be 10 onle because of pass by value we are pasiing the copy if w
+// if we make changes in value it will not affect the original value 
+console.log(b);
+// heap memory contains all the non primitive pass by ref
+let obj1={
+    name: "rushikesh"
+}
+let obj2=obj1 
+obj2.name="rushi";
+console.log(obj1.name);// here output changes because of pass by ref here we are passing the ref
+// original value we cans say if we make changes in value it will affect the original value 
+console.log(obj2.name);
