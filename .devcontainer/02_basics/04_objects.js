@@ -44,4 +44,29 @@ console.log(Object.values(user));// we get all the values in one single array
 console.log(Object.entries(user));
 // we can also check does this keys is ther in our object or not the output will be in the form of true and false 
 console.log(user.hasOwnProperty('email'));// output will be false for sure 
+//+++++++++++++++++++++++++++++++++++
+// we will se destructuring: here if we want to axis the value of the object we used .method
+// which is so lengthy instad of it we can simpily used data structuring 
+console.log(user.id);// if i want id so many time instead of writin this all i can simpily 
+// used destructruing 
+const {id}=user
+console.log(id);// we will get our id 
 
+// now we will learn about api's 
+//API: it is an application which brings data for our software or website or app from the 
+// servers or database it brings in the form json 
+// json: the form of data that api  brings from a database 
+// json is an like an object only in which keys and values bothe are in the form of strings 
+// {
+//     "name":"rushi",
+//     "id": "2",
+// }
+// we can also json in the from of array in that array there will be so many objects 
+// [
+//     {
+
+//     },
+//     {
+
+//     }
+// ]
