@@ -1,11 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- now we are learning dom manupuation in js 
+ DOM: Documnet object modult it is an prgramming interface that represents the html page (DOCUMENT OBJECT MODEL : WHERE 
+ HMTL IS AN DOCUMENT  OBJECT MODEL) as a treee object  (IN A tree form ) where it allows us to axis and modify the html page -->
+<!-- document type -->
+ <!DOCTYPE html>
+<!-- it is an document  -->
+ <html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        ul{ color: white;}
+    </style>
 </head>
-<body>
-    <h1>rushi here lets start the dom manupulation </h1>
+<body id="body">
+   <div>
+    <h1 id="titel" class="heading" > Dom leaning with chai aur code
+        <span id="hidetext"> learning with ruhsi</span> </h1>
+    <p id="para"> the best platform to learn webdev is chai aur code </p>
+   </div>
+   <ul>
+    <li>code</li>
+    <li>project</li>
+    <li>dsa</li>
+    <li>hackathon</li>
+   </ul>
+    
+        <ol class="ol">
+        <li>error</li>
+        <li>debug</li>
+        <li>enginners</li>
+        <li>solve</li>
+        </ol>
+   
 </body>
+<!-- now we know what is mean by dom it is an document object model in the form of tree object so 
+ here html is the documnet object model and we can axis and modify this using js so we need a script 
+ tag to run js in the html page  -->
+ <script>
+    // now we willl learn some of the dom methods or propeties first one sleector 
+    // we have doucment.getElementById(name of the id )// it will give us an output in the browser's console it will give 
+    // all the elments in the title id 
+    const span= document.getElementById("hidetext")
+        span.style.display="none"// it will hide some of the text 
+    const selector=document.getElementById("titel")
+     console.log(selector);// whole element who have id name titel
+     console.log(selector.id);// output will be id name  
+     console.log(selector.className);// it will give us name of the class
+     // we can also set an attribute 
+     console.log(selector.setAttribute('class','test'));// now if we check in the elements section of our browser we can
+     // se the class value is change to test and attribute it gives more info about our webpage in the form of key and value 
+     // lets style our heading 
+     selector.style.color="white"
+     // using dom we can also style the webpage 
+     // style our para
+     const para=document.getElementById("para")
+     para.style.color="white"
+const body=document.getElementById('body')
+console.log(body);
+// now lets style the body 
+body.style.backgroundColor="black"
+//2. property is to take content we have three ways in this 
+//fist one is innerText
+   console.log(selector.innerText);// we will get the text which 
+   // is displaying on the webpage 
+// Second one is text content
+    console.log(selector.textContent)// now we here the output is 
+    // also showing the text which is not on web page 
+// Third one is innerHtml
+console.log(selector.innerHTML);  // it will givve us everything 
+// that was in the h1 element 
+
+//3. now we have some more method to select the element from 
+// html document 
+//1.querryselector: it only slect the elemnet which we pass in 
+// the parenthisis of it 
+console.log(document.querySelector("h1"));// it only selects the h1 tag 
+// we can also select class using . and ids using #
+
+//2.querryselectorAll
+//Nodecollection: it is like an array collectin of an element but it dont have map
+const templist=document.querySelectorAll("li")
+  console.log(templist);
+//now it will select all the 
+// list from the html documnet and make collectin of it NodeList: it is a collection of elements they are not 
+// array but like an array  it have indexing then foreach loop we can have for it 
+// lets style it 
+ templist[0].style.color="red";
+ // we can also run foreach on this 
+//  templist.forEach((li)=>{
+//     li.style.color="skyblue"// everything will be blue 
+//  })
+ //HTMLCOLLECTION: here it is an also colletion of elements but it dont have 
+ // for each and mapping so to apply for each on iy we have to convert it first in array then we will apply fro each on it 
+ const newlist=document.getElementsByClassName("ol")
+ console.log(newlist);// it will give us an html collection now 
+ // lets change this into an array to apply foreach loop on it 
+ const converted=Array.from(newlist)
+ converted.forEach((elements)=>{
+    elements.style.color="yellow"
+ })
+ </script>
 </html>

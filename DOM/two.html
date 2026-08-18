@@ -1,0 +1,59 @@
+<!--  In this practice we wil going to learn parent chil and child parent and sibling relation of html elements using dom 
+  and we will modify them using js and also we will create new element uing dom and js in html  -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatin in dom </title>
+    <style>
+        body{ 
+            background-color: #131212;
+        }
+        .parent{
+           color: #fff;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      Days in a week
+          <div class="day"> MondAY </div>
+          <div class="day"> Tuesday</div>
+          <div class="day"> Wednesday</div>
+          <div class="day">Thursday</div>
+          <div class="day">Friday</div>
+          <div class="day">Saturday</div>
+          <div class="day">Sunday</div>
+    </div>
+  </body>
+         <script>
+            // <!--  lets understand parent and chid relation using dom and js -->
+    //parent to childre property 
+            const parent= document.querySelector(".parent")
+            console.log(parent);// parent will be printed 
+            console.log(parent.children);// it wil give us all the days with its clas 
+            // so parent is monday and it have its child ass a days of the week 
+            //now its give us an html collectionn 
+            // now on this we can run the loop 
+              for(let i=0; i<parent.children.length; i++){
+                console.log(parent.children[i].innerHTML)// it will show all the elments in the console of browser 
+              }
+              // we can also axis elements seperately 
+              console.log(parent.firstElementChild);
+              // if we do last child it will give us html elemnt of sunday 
+
+              //2. children to parent relation 
+              const childd=document.querySelector(".day");
+              console.log(childd)
+              console.log(childd.parentElement);
+
+
+              //3.sibliling property
+              console.log(childd.nextElementSibling)// it will give us an elment of tuesday 
+
+              // Nodes: all the item in the html page output will be in the form of nodlist
+              console.log("NODES: ", parent.childNodes)// it will calculate everything calculate everything comments annd text tags 
+              
+            </script>
+  </html>
