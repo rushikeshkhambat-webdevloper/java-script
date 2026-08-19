@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Edit and remove in dom </title>
+    <style>
+        body{
+            background-color: #160303;
+        }
+        .language{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+<ul class="language">
+    <li> JavaScript </li>
+</ul>
+</body>
+<script>
+    // lets create new elemnets 
+    // beeter way but in this wee nedd to traverse entire code 
+    function addlang (langname){
+        const li=document.createElement("li")
+        li.innerHTML=`${langname}`// this way traverse the whole code 
+        document.querySelector(".language").appendChild(li)
+    }
+    addlang("python")
+    // we have optimised way to add the new element 
+    function addoptlang (langname){
+        const li=document.createElement("li")
+        li.appendChild(document.createTextNode(langname))// node is the item in html 
+        // here we are using text item it is more optimised way 
+        // it did not traverse whole code 
+        document.querySelector(".language").appendChild(li)
+    }
+    addoptlang("Java")
+    addoptlang("C")
+
+    // now edit 
+   // If i want to change the second lang to c++
+   const lang=document.querySelector("li:nth-child(2)")
+   // 1st way=lang.innerHTML="c++"
+    // 2nd way=lang.outerHTML="<li> c++ </li>"
+    //3rd way
+    const newlang=document.createElement("li")
+    newlang.textContent=" c++ "
+    lang.replaceWith(newlang)
+
+    // now if i have to remove c++
+    const langremove=document.querySelector("li:nth-child(2)")
+    langremove.remove()// it wil remove c++ from the list 
+</script>
+</html>
