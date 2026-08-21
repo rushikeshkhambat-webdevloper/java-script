@@ -1,0 +1,28 @@
+body{
+    background-color: #e88080;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+.health{
+    text-align: center;
+    font-size: larger;
+    
+    
+}
+#height{
+    border: 3px solid black;
+}
+#weight{
+    border: 3px solid black;
+}
+button{
+    border: 3px solid black;
+    font-size: larger;
+}
+.guidelines{
+    text-align: center;
+    font-size: larger;
+}
