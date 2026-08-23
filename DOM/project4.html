@@ -1,0 +1,32 @@
+<!-- This is the project is about the game in which we will going to create one game 
+ guess the number we will have the 10 guess to guess the right random number  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project4</title>
+    <link rel="stylesheet" href="style4.css">
+ </head>
+ <body>
+    <div class="wrapper">
+        <h1>The Game: Guess The Number</h1>
+        <p> Try and guess the random number between 1 to 100</p>
+        <p> You only have 10 guesses to guess the correct random number  </p>
+        <br>
+        <form class="form">
+            <label for="guessfield" id=""guess>Guess a Number </label>
+            <input type="text" id="guessfield" class="guessfield">
+            <!--  now we want one button and we can also have buttons in input  -->
+            <input type="submit" id="subt" value="submit guess" class="guesssubmit">
+        </form>
+        <div class="resultParas">
+            <p>Previous Guess: <span class="guess"></span> </p>
+            <p>Guess Remaining: <span class="lastresult">10</span></p>
+            <p class="LoworHi"></p>
+        </div>
+    </div>
+    <script src="project4.js"></script>
+    
+ </body>
+ </html>
