@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Practice</title>
+    <style>
+        body{
+            background-color: #5b5757;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1> Practice events using the Images example </h1>
+        <a   href="https://www.google.com/" id="link">google</a>
+
+        <ul id="image-list">
+
+            <li id="image-1">
+                <img src="https://picsum.photos/id/1015/200/150" alt="Image 1">
+            </li>
+
+            <li id="image-2">
+                <img src="https://picsum.photos/id/1016/200/150" alt="Image 2">
+            </li>
+
+            <li id="image-3">
+                <img src="https://picsum.photos/id/1018/200/150" alt="Image 3">
+            </li>
+
+            <li id="image-4">
+                <img src="https://picsum.photos/id/1020/200/150" alt="Image 4">
+            </li>
+
+            <li id="image-5">
+                <img src="https://picsum.photos/id/1024/200/150" alt="Image 5">
+            </li>
+
+            <li id="image-6">
+                <img src="https://picsum.photos/id/1025/200/150" alt="Image 6">
+            </li>
+
+        </ul>
+
+    </div>
+</body>
+<script>
+    // Events: Any action that takes palce on web page is an events ex: if i click 
+    // on an button it will open a new tab that click was the action and we called it event more ex:
+    // moving the cursor submiiting the form 
+
+    // addeventlistner: when we call any event someone should listen it and perfrom some task as per event 
+    // ex: if i click on any evnet it should some task 
+    const image1=document.getElementById("image-1");
+    console.log(image1)
+    // lets add event on this 
+    image1.addEventListener('click', function(e){
+            alert(" hey you click on the first image ")// if i click on the first image 
+            // i will get a pop up alert messgae form my browser that hey you click on the first image 
+            // here e in the parameters of the function is and event object it can be any variable 
+            // it have all info about the event we can used for differnt methods of an event 
+    })
+    //Event propogation :When i click on the image one ul element and div element also know 
+    // here click event travels from multiple elemnets this is called event propogation 
+    // two types :
+    //1: bubble event propoagation : here event goes from insid to outside ex:we used defalult false for it 
+    // document.getElementById("image-list").addEventListener('click', function(e){
+    //     console.log(" hey you click on the list tag")
+    // },false);
+    // document.getElementById("image-2").addEventListener('click',function(e){
+    //     console.log(" hey you clicked on the second image")
+    // },false)// here if i clicked on first second imgae it will first shwo hey you clicked on the second image 
+    // then  hey you clicked on the list tag this evnt is going insid to out 
+
+    //2: caputure event propogation : we have defalult key word as a true 
+    //  document.getElementById("image-list").addEventListener('click', function(e){
+    //     console.log(" hey you click on the list tag")
+    // },true);
+    // document.getElementById("image-2").addEventListener('click',function(e){
+    //     console.log(" hey you clicked on the second image")},true)// 
+        //this will work like an outside to inside 
+    // we can also stop this propogation   
+    //    ment.getElementById("image-list").addEventListener('click', function(e){
+    //     console.log(" hey you click on the list tag")
+    //     e.stop   docuPropagation()
+    // },true);// it wil not go inside the ul to li
+
+    //4.Prevent defalut : here it stops the browsers defalut action for an event 
+    //ex:
+document.getElementById("link").addEventListener('click', function(e){
+    e.preventDefault();// now if i clikc on the googl.com it will not go to the google server and will not open the google webpage 
+})
+console.log(link) 
+
+// let have realife example: when i will click on any image it should get removed form web page 
+document.querySelector("#image-list").addEventListener('click', function(e){
+   // now we will target every image li element by img tag 
+    if(e.target.tagName==="IMG"){
+        let removeit=e.target.parentNode// it will target to list tag 
+        removeit.remove();// target, tagname is an property of the events object
+    }
+})
+
+
+</script>
+</html>
