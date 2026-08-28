@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>propeties of async </title>
+</head>
+<!--  Async: it is way of code we written we can say that we dont wait to current work if its needed any data we will simpily work on other code 
+  so let it execute and then after this code can also get execute  -->
+<body>
+    <div class="container">
+        <h1> Chai aur code </h1>
+        <button id="stop"> Stop</button>
+    </div>
+</body>
+<script>
+    //  now lets see some of the methods of async we can say 
+    // setTimeout: it stays that run the code after some time only runs it once 
+//     const heading=function(){// in this function we slect the heading and change that heading to another heading now if i want this heading should change after one second on web page 
+//         document.querySelector("h1").innerHTML=" Best tutourial for js is chai aur code "
+//     }
+//    let changeoftime= setTimeout( heading, 2000);
+//     // now here the heading will change after every two second if i haveto 
+//     // stop this thing then i have one more method 
+//     // cleartimeout: to stop setimeout
+//     clearTimeout(changeoftime);
+
+    // now we have another method name setInterval: it means that after a given 
+    // time peroid or given time interval run the code countinuously after a time 
+    // and to stop it we have clearInterval
+    const heading=function(){// in this function we slect the heading and change that heading to another heading now if i want this heading should change after one second on web page 
+        document.querySelector("h1").innerHTML=" Best tutourial for js is chai aur code "
+        console.log("rushikesh")// it will run after every two seconds 
+    } 
+    let timeinterval= setInterval(heading,2000)
+    // lets stop it 
+    clearInterval(timeinterval)
+        </script>
+</html>
